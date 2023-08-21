@@ -1,0 +1,73 @@
+@import "@/assets/styles/variables.module.scss";
+
+.property-card {
+  position: relative;
+  border-radius: 4px;
+  background: $white_color;
+  box-shadow: 0px 8px 24px rgba(11, 17, 52, 0.2);
+  border-radius: 4px;
+
+  .property-card__thumbnail {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    height: 272px;
+
+    .badge {
+      z-index: 900;
+      position: absolute;
+      left: -5px;
+      top: 6px;
+    }
+  }
+
+  .property-card__content {
+    background-color: $white_color;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    padding: 24px;
+
+    .title {
+      font-weight: 600;
+      color: $primary_color;
+    }
+
+    .address {
+      font-style: normal;
+      font-weight: 100;
+      color: $primary_color_light;
+    }
+
+    .price {
+      font-style: normal;
+      font-weight: 600;
+      color: $primary_color;
+    }
+
+    .other-info {
+      font-style: normal;
+      font-weight: 100;
+      color: $primary_color;
+    }
+
+    .price-from {
+      font-style: normal;
+      font-weight: 100;
+      color: $primary_color_light;
+    }
+  }
+
+  .property-card__description {
+    .button-desc {
+      font-weight: 600;
+      text-align: center;
+      color: $secondary_color;
+    }
+
+    .description-content {
+      font-style: normal;
+      font-weight: 100;
+      color: $primary_color;
+      white-space: pre-line;
+    }
+  }
+}

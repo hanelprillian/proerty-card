@@ -1,0 +1,23 @@
+.homepage {
+  margin: 0 auto;
+  padding: 2.5rem;
+  max-width: 1366px;
+
+  .listing-row {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: nowrap;
+
+    .listing-col {
+      flex: 1 auto;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage {
+    .listing-row {
+      flex-wrap: wrap;
+    }
+  }
+}

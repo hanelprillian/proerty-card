@@ -26,33 +26,74 @@
     border-bottom-right-radius: 4px;
     padding: 24px;
 
-    .title {
-      font-weight: 600;
-      color: $primary_color;
-    }
+    >.content {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      margin-bottom: 0.75rem;
 
-    .address {
-      font-style: normal;
-      font-weight: 100;
-      color: $primary_color_light;
-    }
+      >.content__heading {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 0;
+        flex: 1;
+        flex-wrap: wrap;
 
-    .price {
-      font-style: normal;
-      font-weight: 600;
-      color: $primary_color;
-    }
+        >.heading__icon {
+          width: auto;
+        }
 
-    .other-info {
-      font-style: normal;
-      font-weight: 100;
-      color: $primary_color;
-    }
+        >.heading__title {
+          display: flex;
+          margin-top: -0.25rem;
+          flex-direction: column;
+          flex: 1;
 
-    .price-from {
-      font-style: normal;
-      font-weight: 100;
-      color: $primary_color_light;
+          >.title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: $primary_color;
+          }
+
+          >.address {
+            font-size: 0.875rem;
+            font-style: normal;
+            font-weight: 100;
+            color: $primary_color_light;
+          }
+        }
+
+        >.heading__other-info {
+          font-style: normal;
+          font-weight: 100;
+          color: $primary_color;
+          flex-basis: 100%;
+          font-size: 1rem;
+        }
+      }
+
+      >.content__info {
+        display: flex;
+        margin-left: auto;
+        align-items: flex-end;
+        gap: 0;
+        flex-direction: column;
+        text-align: right;
+
+        >.content__info-price {
+          font-style: normal;
+          font-weight: 600;
+          color: $primary_color;
+          font-size: 1.25rem;
+        }
+
+        >.content__info-price-from {
+          font-size: 0.875rem;
+          font-style: normal;
+          font-weight: 100;
+          color: $primary_color_light;
+        }
+      }
     }
   }
 

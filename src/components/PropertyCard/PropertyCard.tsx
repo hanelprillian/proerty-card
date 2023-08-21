@@ -1,7 +1,7 @@
 import IPropertyListing from "@/interfaces/IPropertyListing";
-// import ImageSlider from "../../client/ImageSlider/ImageSlider";
 import styles from "./style.module.scss";
 import { usdMoney } from "@/lib/helpers";
+import ImageSlider from "@/components/ImageSlider/ImageSlider";
 // import DescriptionToggler from "@/components/client/DescriptionToggler/DescriptionToggler";
 
 export default function PropertyCard(props: IPropertyListing) {
@@ -11,15 +11,15 @@ export default function PropertyCard(props: IPropertyListing) {
         <div className={styles["badge"]}>
           <BadgeIcon />
         </div>
-        {/* <ImageSlider images={pics} /> */}
+        <ImageSlider images={props.pics} />
       </div>
       <article className={styles["property-card__content"]}>
-        <div className="flex flex-wrap flex-col lg:flex-row mb-3">
-          <div className="flex gap-4 flex-wrap flex-1 mb-5 lg:mb-0">
-            <div className="w-auto">
+        <div className={styles["content"]}>
+          <div className={styles["content__heading"]}>
+            <div className={styles["heading__icon"]}>
               <BuildingIcon />
             </div>
-            <div className="flex md:-mt-1 flex-col flex-1">
+            <div className={styles["heading__title"]}>
               <div className={styles["title"]} aria-label={props.title}>
                 {props.title}
               </div>
@@ -27,21 +27,29 @@ export default function PropertyCard(props: IPropertyListing) {
                 {props.address}
               </div>
             </div>
-            <div className={styles["other-info"]}>
+            <div className={styles["heading__other-info"]}>
               {props.projectType} · {props.year} · {props.ownershipType} <br />
               {props.availabilitiesLabel}
             </div>
           </div>
-          <div className="flex lg:ml-auto items-center lg:items-end gap-3 lg:gap-0 lg:flex-col lg:text-right">
-            <div className={styles["price"]} aria-label="Price range">
+          <div className={styles["content__info"]}>
+            <div
+              className={styles["content__info-price"]}
+              aria-label="Price range"
+            >
               <span aria-label={`Start price ${props.psfMin}`}>
                 {usdMoney(props.psfMin)}
               </span>{" "}
               -{" "}
-              <span aria-label={`End price ${props.psfMax}`}>{usdMoney(props.psfMax)}</span>{" "}
+              <span aria-label={`End price ${props.psfMax}`}>
+                {usdMoney(props.psfMax)}
+              </span>{" "}
               psf
             </div>
-            <div className={styles["price-from"]} aria-label={props.subpriceLabel}>
+            <div
+              className={styles["content__info-price-from"]}
+              aria-label={props.subpriceLabel}
+            >
               {props.subpriceLabel}
             </div>
           </div>
@@ -70,7 +78,7 @@ function BadgeIcon() {
           />
           <path
             fillRule="evenodd"
-            clip-rule="evenodd"
+            clipRule="evenodd"
             d="M124 21H124.447C125.07 21 125.656 20.7103 126.035 20.2163L132.544 11.72C133.093 11.0023 133.093 10.0051 132.544 9.28744L126.031 0.786051C125.655 0.294901 125.072 0.00554085 124.454 0.00234413L124 0V21Z"
             fill="#FF72B6"
           />
@@ -78,7 +86,7 @@ function BadgeIcon() {
         <path d="M0 21H4V25H2C0.895431 25 0 24.1046 0 23V21Z" fill="#CE367F" />
         <path
           fillRule="evenodd"
-          clip-rule="evenodd"
+          clipRule="evenodd"
           d="M2 21C2 21 0 21 0 23C0 23 0 21 0 21L2 21Z"
           fill="#FF72B6"
         />

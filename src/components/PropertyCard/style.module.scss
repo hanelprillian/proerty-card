@@ -96,19 +96,52 @@
       }
     }
   }
+}
 
-  .property-card__description {
-    .button-desc {
-      font-weight: 600;
-      text-align: center;
-      color: $secondary_color;
-    }
-
-    .description-content {
-      font-style: normal;
-      font-weight: 100;
-      color: $primary_color;
-      white-space: pre-line;
+@media (max-width: 1024px) {
+  .property-card {
+    .property-card__content {
+      padding: 18px;
+  
+      >.content {
+        flex-direction: column;
+  
+        >.content__heading {
+          gap: 12px;
+          margin-bottom: 0;
+  
+          >.heading__title {  
+            >.title {
+              font-size: 16px;
+            }
+  
+            >.address {
+              font-size: 12px;
+            }
+          }
+  
+          >.heading__other-info {
+            font-size: 14px;
+          }
+        }
+  
+        >.content__info {
+          margin-left: 0;
+          margin-top: 12px;
+          align-items: center;
+          gap: 1rem;
+          flex-direction: row;
+          text-align: left;
+  
+          >.content__info-price {
+            font-size: 16px;
+          }
+  
+          >.content__info-price-from {
+            font-size: 12px;
+          }
+        }
+      }
     }
   }
 }

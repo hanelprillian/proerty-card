@@ -1,0 +1,47 @@
+@import "@/assets/styles/variables.module.scss";
+
+.description-toggler {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  .description-toggler__desc {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    color: $secondary_color;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .description-toggler__content {
+    margin-top: 0.75rem;
+    font-style: normal;
+    font-weight: 100;
+    color: $primary_color;
+    white-space: pre-line;
+    font-size: 1rem;
+
+    &.block {
+      display: block;
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .description-toggler {
+    .description-toggler__desc {
+      font-size: 14px;
+    }
+
+    .description-toggler__content {
+      font-size: 14px;
+    }
+  }
+}

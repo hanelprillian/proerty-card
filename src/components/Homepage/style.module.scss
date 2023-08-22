@@ -9,13 +9,16 @@
     flex-wrap: nowrap;
 
     .listing-col {
-      flex: 1;
+      width: 50%;
+      flex: 1 auto;
     }
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .homepage {
+    padding: 1rem;
+
     .listing-row {
       flex-wrap: wrap;
     }

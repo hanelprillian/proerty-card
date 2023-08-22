@@ -2,7 +2,7 @@ import IPropertyListing from "@/interfaces/IPropertyListing";
 import styles from "./style.module.scss";
 import { usdMoney } from "@/lib/helpers";
 import ImageSlider from "@/components/ImageSlider/ImageSlider";
-// import DescriptionToggler from "@/components/client/DescriptionToggler/DescriptionToggler";
+import DescriptionToggler from "../DescriptionToggler/DescriptionToggler";
 
 export default function PropertyCard(props: IPropertyListing) {
   return (
@@ -54,7 +54,7 @@ export default function PropertyCard(props: IPropertyListing) {
             </div>
           </div>
         </div>
-        {/* <DescriptionToggler description={description} /> */}
+        <DescriptionToggler description={props.description} />
       </article>
     </section>
   );

@@ -1,5 +1,9 @@
 export function usdMoney(amount: number) {
-  return amount.toLocaleString("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 });
+  return amount.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  });
 }
 
 export function hidePhone(str: string, separators: string[] = []) {
@@ -11,9 +15,15 @@ export function hidePhone(str: string, separators: string[] = []) {
   };
 
   separators.forEach((separator) => {
-    searchableString = searchableString.replace(regexPattern[separator], function (match) {
-      return `<span class='phone-number-toggle' data-phone-number='${match}'>${match.replace(/\d{4}$/, "XXXX")}</span>`;
-    });
+    searchableString = searchableString.replace(
+      regexPattern[separator],
+      function (match) {
+        return `<span class='phone-number-toggle' data-phone-number='${match}'>${match.replace(
+          /\d{4}$/,
+          "XXXX"
+        )}</span>`;
+      }
+    );
   });
 
   return searchableString;
